@@ -1,49 +1,102 @@
-PukkeConnect – Society Matchmaker Platform 📌 Overview PukkeConnect is a web application designed to intelligently match university students with societies based on their interests, availability, and preferred activities. A recent study revealed that 68% of South African university students never join societies due to difficulty discovering relevant groups. PukkeConnect bridges this gap by providing a personalised, data-driven matching system, ultimately improving student engagement and supporting universities in generating additional revenue.
+# 🎓 PukkeConnect Frontend
 
-🎯 Objectives Increase society participation rates through personalised recommendations.
+![PukkeConnect Homepage](https://github.com/Tebogo17/PukkeConnect-/blob/4eccdef6d480d569a03219a51752d83e1509236c/Capture.PNG)
 
-Support student engagement and community building.
+**PukkeConnect Frontend**
 
-Provide Computer Science and Information Systems students with real-world development experience.
+Welcome to the **PukkeConnect Frontend**, the interactive web platform that helps NWU students connect with societies, clubs, and organizations that match their interests.
 
-Enable commercialisation and licensing to other Higher Education Institutions (HEIs).
+Built using React.js and Tailwind CSS, PukkeConnect’s frontend is designed for speed, simplicity, and an engaging user experience.
 
-🛠 Key Features Matchmaking Quiz: Students fill in their interests, time availability, and society type preferences.
+---
 
-Smart Matching Algorithm: Suggests top society matches and full list based on quiz responses.
+## 🚀 Overview
 
-Role-Based Access Control: Different interfaces and permissions for Students, Society Leaders, and Admins.
+The frontend enables:
+- 🎓 Student and representative dashboards  
+- 📢 Announcement management and notifications  
+- 🔐 Secure authentication using JWT tokens  
+- ⚙️ Seamless integration with the Express + PostgreSQL backend  
+- 📱 Responsive design for desktop and mobile
+---
 
-Society Management: Leaders can post events, view analytics, and manage members.
+**Tech Stack**
 
-Analytics Dashboard: Provides insights into student interests and society trends.
+| Layer | Technology |
+|-------|-------------|
+| Framework | React.js (Create React App) |
+| State Management | Context API / Redux (depending on setup) |
+| HTTP Client | Axios |
+| Styling | Tailwind CSS / CSS Modules |
+| Routing | React Router |
+| Environment | dotenv |
+| Deployment | Vercel / GitHub Pages |
 
-Join Requests & Favorites: Students can save societies or send join requests directly.
+---
 
-🔄 System Flow User Registration/Login – Authentication via database.
+## 📁 Project Structure
 
-Role Assignment – Student, Society Leader, or Admin with role-specific permissions.
+```
+frontend/
+│
+├── src/
+│   ├── assets/           # Images, icons, and static files
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Main application pages (Dashboard, Login, etc.)
+│   ├── services/         # API integration via Axios
+│   ├── context/          # Authentication or global context
+│   ├── App.js            # Main React component
+│   └── index.js          # React DOM entry point
+│
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+│
+├── package.json
+├── .env.example
+└── README.md
+```
 
-Matchmaking Quiz – Students input preferences and submit.
+---
 
-Recommendation Display – Top matches shown; option to save or join.
+### Configure Environment Variables
 
-Society Leader Dashboard – Post events, update society info, view analytics.
+Copy the example environment file:
+```bash
+cp .env.example .env
+Then set your API base URL (pointing to the backend):
+```env
+REACT_APP_API_URL=http://localhost:5000
+This ensures all API requests connect to your running backend service.
 
-Admin Panel – Full database management, analytics, and moderation.
+---
+## 🧩 Common Commands
 
-(Refer to the included flowchart image for a detailed process diagram.)
+| Command | Description |
+|----------|-------------|
+| `npm start` | Run in development mode |
+| `npm run build` | Build for production |
+| `npm test` | Run unit tests (if configured) |
+| `npm run lint` | Check code quality |
 
-📊 Benefits For Students – Simplifies society discovery and increases engagement opportunities.
+---
 
-For Societies – Increases membership, participation, and event attendance.
+## 🧠 Troubleshooting
 
-For Universities – Enhances campus life, supports strategic goals, and enables commercial licensing.
+| Issue | Possible Solution |
+|--------|--------------------|
+| API requests failing | Ensure backend (`localhost:5000`) is running |
+| CORS errors | Confirm CORS is enabled in the backend |
+| “Module not found” | Run `npm install` again |
+| `.env` not detected | Restart React after editing `.env` |
 
-🚀 Implementation Approach Development: Internal student talent under faculty supervision.
+---
 
-Pilot Phase: Initial deployment at one NWU campus for testing and feedback.
+## 🌐 Deployment
 
-Scaling: Roll out to all campuses and prepare commercial offering.
+| Platform | Instructions |
+|-----------|--------------|
+| **Vercel** | Connect repo → Set `REACT_APP_API_URL` in environment settings → Deploy |
+| **GitHub Pages** | Run `npm run build` → Deploy via `gh-pages` package |
 
-📌 Tech Stack (Proposed)
+---
